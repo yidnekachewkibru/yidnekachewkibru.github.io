@@ -89,7 +89,7 @@ If you'd like to adapt this for your own portfolio:
 - **Phone / WhatsApp** — [+251 912 708 459](tel:+251912708459)
 - **Location** — Addis Ababa, Ethiopia · Available globally for remote work
 
-For project inquiries, the [contact form on the site](https://yidnekachewkibru.github.io/Portfolio/#contact) is the fastest way to reach me.
+For project inquiries, the [contact form on the site](https://yidnekachewkibru.github.io/#contact) is the fastest way to reach me.
 
 ## License
 
