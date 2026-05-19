@@ -2,7 +2,7 @@
 
 A personal portfolio website showcasing my work as a Software Engineer and BSS Operations Manager. Built as a single static HTML file with vanilla CSS and JavaScript — no build step, no frameworks, no dependencies.
 
-🌐 **Live site:** [yidnekachewkibru.github.io/Portfolio](https://yidnekachewkibru.github.io/Portfolio)
+🌐 **Live site:** [yidnekachewkibru.github.io/](https://yidnekachewkibru.github.io/)
 
 ## About
 
