@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#0b1a2d" />
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%235d8fdb'/%3E%3Cstop offset='100%25' stop-color='%232956a3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Ctext x='50%25' y='53%25' font-family='Inter,system-ui,sans-serif' font-size='14' font-weight='800' fill='%23fff' text-anchor='middle' dominant-baseline='central' letter-spacing='-1'%3EYK%3C/text%3E%3C/svg%3E" />
+<link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%235d8fdb'/%3E%3Cstop offset='100%25' stop-color='%232956a3'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='7' fill='url(%23g)'/%3E%3Ctext x='50%25' y='53%25' font-family='Inter,system-ui,sans-serif' font-size='14' font-weight='800' fill='%23fff' text-anchor='middle' dominant-baseline='central' letter-spacing='-1'%3EYK%3C/text%3E%3C/svg%3E" />
+<title>Yidnekachew Kibru Afework — Software Engineer & BSS Operations</title>
+<meta name="description" content="Senior software engineer and BSS operations manager. Custom software, AI automation, web development, enterprise monitoring, and telecom systems consulting." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;1,8..60,400&display=swap" rel="stylesheet" />
+<style>
+/* ════════════════════════════════════════════
+   THEME TOKENS
+   ════════════════════════════════════════════ */
+:root[data-theme="dark"] {
+  --bg-0:     #0b1a2d;
+  --bg-1:     #0e2138;
+  --bg-2:     #102844;
+  --bg-card:  rgba(255, 255, 255, .025);
+  --bg-card-hover: rgba(255, 255, 255, .04);
+  --bg-input: rgba(255, 255, 255, .04);
+
+  --line:     rgba(255, 255, 255, .08);
+  --line-2:   rgba(255, 255, 255, .14);
+
+  --text:     #e8eef6;
+  --heading:  #ffffff;
+  --muted:    #94a8c4;
+  --muted-2:  #6c7f9b;
+
+  --accent-100: rgba(93, 143, 219, .12);
+  --accent-300: #94b8e6;
+  --accent-500: #5d8fdb;
+  --accent-600: #3a6dcc;
+  --accent-700: #2956a3;
+
+  --chip-bg:  rgba(255, 255, 255, .03);
+  --tag-bg:   rgba(93, 143, 219, .12);
+  --tag-fg:   #94b8e6;
+  --tag-bd:   rgba(93, 143, 219, .18);
+
+  --nav-bg:   rgba(11, 26, 45, .80);
+  --shadow:   0 1px 2px rgba(0,0,0,.04);
+  --shadow-lg:0 24px 60px rgba(0,0,0,.4);
+
+  --grid-fade: rgba(255,255,255,.03);
+}
+:root[data-theme="light"] {
+  --bg-0:     #ffffff;
+  --bg-1:     #f6f7fa;
+  --bg-2:     #ebeef4;
+  --bg-card:  #ffffff;
+  --bg-card-hover: #fafbfd;
+  --bg-input: #ffffff;
+
+  --line:     #e6e8ee;
+  --line-2:   #d6dae3;
+
+  --text:     #344155;
+  --heading:  #0b1a2d;
+  --muted:    #64718a;
+  --muted-2:  #8a94a8;
+
+  --accent-100: #eaf0fb;
+  --accent-300: #5d8fdb;
+  --accent-500: #3a6dcc;
+  --accent-600: #2956a3;
+  --accent-700: #1f4380;
+
+  --chip-bg:  #f6f7fa;
+  --tag-bg:   #eaf0fb;
+  --tag-fg:   #2956a3;
+  --tag-bd:   #d8e3f5;
+
+  --nav-bg:   rgba(255, 255, 255, .85);
+  --shadow:   0 1px 3px rgba(15, 32, 54, .05);
+  --shadow-lg:0 20px 50px rgba(15, 32, 54, .08);
+
+  --grid-fade: rgba(11,26,45,.03);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--bg-0);
+  line-height: 1.62;
+  font-size: 16px;
+  font-feature-settings: "ss01", "ss03";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color .35s ease, color .35s ease;
+}
+body, body * { transition-property: background-color, border-color, color, fill, stroke, box-shadow; transition-duration: .25s; transition-timing-function: ease; }
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-0); }
+::-webkit-scrollbar-thumb { background: var(--line-2); border-radius: 4px; border: 2px solid var(--bg-0); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-500); }
+::selection { background: var(--accent-700); color: #fff; }
+
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 2px solid var(--accent-500); outline-offset: 3px; border-radius: 4px; }
+
+/* ════════════════════════════════════════════
+   NAVIGATION
+   ════════════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--nav-bg);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
+  border-bottom: 1px solid transparent;
+  padding: 0 5vw;
+  height: 68px;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: border-color .3s ease, background-color .3s ease, box-shadow .3s ease;
+}
+nav.scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: var(--shadow);
+}
+.brand {
+  display: flex; align-items: center; gap: .5rem;
+  font-weight: 700; font-size: .95rem;
+  color: var(--heading);
+  letter-spacing: -.2px;
+}
+.brand-mark {
+  width: 28px; height: 28px;
+  border-radius: 7px;
+  background: linear-gradient(135deg, var(--accent-500), var(--accent-700));
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-weight: 800;
+  font-size: .75rem;
+  letter-spacing: -.5px;
+}
+.brand .sep { color: var(--muted-2); margin: 0 .25em; }
+.brand .role { color: var(--muted); font-weight: 500; }
+.nav-links { display: flex; gap: 1.7rem; list-style: none; align-items: center; }
+.nav-links a {
+  position: relative;
+  color: var(--muted);
+  font-size: .85rem;
+  font-weight: 500;
+  padding: .25rem 0;
+}
+.nav-links a:hover { color: var(--heading); }
+.nav-links a.active { color: var(--heading); }
+.nav-links a.active::after {
+  content: ''; position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: var(--accent-500);
+  border-radius: 1px;
+}
+.nav-right { display: flex; align-items: center; gap: .65rem; }
+.theme-toggle {
+  width: 38px; height: 38px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  color: var(--text);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color .2s ease, background-color .2s ease, transform .15s ease;
+}
+.theme-toggle:hover { border-color: var(--line-2); transform: translateY(-1px); }
+.theme-toggle svg { width: 17px; height: 17px; }
+.theme-toggle .sun { display: none; }
+.theme-toggle .moon { display: block; }
+:root[data-theme="light"] .theme-toggle .sun { display: block; }
+:root[data-theme="light"] .theme-toggle .moon { display: none; }
+.nav-cta {
+  background: var(--accent-600);
+  color: #fff;
+  padding: .55rem 1.15rem;
+  border-radius: 8px;
+  font-size: .82rem;
+  font-weight: 600;
+  transition: background .2s ease, transform .15s ease;
+}
+.nav-cta:hover { background: var(--accent-700); transform: translateY(-1px); }
+
+/* Mobile menu toggle */
+.menu-btn {
+  display: none;
+  width: 38px; height: 38px;
+  border-radius: 9px;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  color: var(--text);
+  cursor: pointer;
+  align-items: center; justify-content: center;
+}
+.menu-btn svg { width: 18px; height: 18px; }
+
+/* ════════════════════════════════════════════
+   HERO
+   ════════════════════════════════════════════ */
+.hero {
+  padding: 150px 5vw 100px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(var(--grid-fade) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-fade) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+  mask-image: radial-gradient(ellipse at top right, #000 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at top right, #000 30%, transparent 75%);
+  pointer-events: none;
+  opacity: .8;
+}
+.hero::after {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 50% 45% at 85% 25%, var(--accent-100), transparent 65%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 1100px; margin: 0 auto; position: relative; z-index: 1; }
+.hero-status {
+  display: inline-flex; align-items: center; gap: .55rem;
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 500;
+  margin-bottom: 1.8rem;
+  padding: .35rem .8rem;
+  border: 1px solid var(--line);
+  border-radius: 100px;
+  background: var(--bg-card);
+}
+.dot {
+  width: 7px; height: 7px;
+  background: #10b981;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, .18);
+  animation: pulse 2.4s infinite;
+}
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(16, 185, 129, .18); }
+  50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, .08); }
+}
+.hero h1 {
+  font-weight: 800;
+  font-size: clamp(2.1rem, 4.3vw, 3.3rem);
+  line-height: 1.1;
+  color: var(--heading);
+  letter-spacing: -1.6px;
+  max-width: 880px;
+  margin-bottom: 1.4rem;
+}
+.hero h1 em {
+  font-style: italic;
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-weight: 400;
+  color: var(--accent-300);
+}
+.hero-lead {
+  font-size: 1.04rem;
+  color: var(--muted);
+  line-height: 1.72;
+  max-width: 640px;
+  margin-bottom: 2.3rem;
+}
+.hero-ctas { display: flex; gap: .7rem; flex-wrap: wrap; margin-bottom: 3.5rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: .5rem;
+  padding: .75rem 1.45rem;
+  border-radius: 9px;
+  font-weight: 600; font-size: .88rem;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease;
+  white-space: nowrap;
+}
+.btn-primary {
+  background: var(--accent-600);
+  color: #fff;
+  border: 1px solid var(--accent-600);
+  box-shadow: 0 4px 14px rgba(58, 109, 204, .25);
+}
+.btn-primary:hover { background: var(--accent-700); border-color: var(--accent-700); transform: translateY(-2px); }
+.btn-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line-2);
+}
+.btn-ghost:hover { border-color: var(--accent-500); color: var(--heading); transform: translateY(-2px); }
+.btn .arrow { display: inline-block; transition: transform .2s ease; }
+.btn:hover .arrow { transform: translateX(3px); }
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--line);
+  max-width: 880px;
+}
+.hm-num {
+  font-weight: 700;
+  font-size: 1.55rem;
+  color: var(--heading);
+  letter-spacing: -.5px;
+  line-height: 1;
+}
+.hm-label {
+  font-size: .78rem;
+  color: var(--muted);
+  margin-top: .4rem;
+}
+
+/* ════════════════════════════════════════════
+   SECTIONS
+   ════════════════════════════════════════════ */
+section { padding: 100px 5vw; position: relative; }
+.s-inner { max-width: 1100px; margin: 0 auto; }
+.s-head { margin-bottom: 3rem; max-width: 680px; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .74rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-300);
+  margin-bottom: 1rem;
+}
+.eyebrow::before {
+  content: ''; width: 18px; height: 1px;
+  background: var(--accent-500);
+  display: inline-block;
+}
+.s-title {
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  color: var(--heading);
+  letter-spacing: -.7px;
+  line-height: 1.2;
+  margin-bottom: .7rem;
+}
+.s-sub {
+  font-size: .96rem;
+  color: var(--muted);
+  line-height: 1.72;
+}
+.bg-1 { background: var(--bg-1); }
+.bg-0 { background: var(--bg-0); }
+
+/* ════════════════════════════════════════════
+   SERVICES
+   ════════════════════════════════════════════ */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.1rem;
+}
+.svc {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.8rem;
+  transition: border-color .25s ease, background-color .25s ease, transform .2s ease, box-shadow .25s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.svc::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-500), transparent);
+  opacity: 0;
+  transition: opacity .25s ease;
+}
+.svc:hover {
+  border-color: var(--line-2);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.svc:hover::before { opacity: 1; }
+.svc-num {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: .85rem;
+  color: var(--accent-500);
+  letter-spacing: .5px;
+  margin-bottom: 1rem;
+}
+.svc h3 {
+  font-weight: 700;
+  font-size: 1.04rem;
+  color: var(--heading);
+  margin-bottom: .55rem;
+  letter-spacing: -.3px;
+}
+.svc-desc {
+  font-size: .87rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.2rem;
+}
+.svc-ul { list-style: none; display: flex; flex-direction: column; gap: .42rem; margin-bottom: 1.2rem; }
+.svc-ul li {
+  font-size: .83rem;
+  color: var(--text);
+  display: flex;
+  align-items: flex-start;
+  gap: .6rem;
+  line-height: 1.55;
+}
+.svc-ul li::before {
+  content: "—";
+  color: var(--accent-500);
+  flex-shrink: 0;
+  font-weight: 400;
+}
+.svc-langs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.lb {
+  background: var(--tag-bg);
+  color: var(--tag-fg);
+  padding: .22rem .58rem;
+  border-radius: 5px;
+  font-size: .72rem;
+  font-weight: 500;
+  border: 1px solid var(--tag-bd);
+}
+
+/* ════════════════════════════════════════════
+   PROJECTS
+   ════════════════════════════════════════════ */
+.proj-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.2rem;
+}
+.proj {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  transition: border-color .25s ease, background-color .25s ease, transform .2s ease, box-shadow .25s ease;
+}
+.proj:hover {
+  border-color: var(--line-2);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+.proj-sector {
+  display: inline-block;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--accent-300);
+  margin-bottom: .65rem;
+}
+.proj h3 {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--heading);
+  letter-spacing: -.3px;
+  line-height: 1.35;
+  margin-bottom: .8rem;
+}
+.proj-desc {
+  font-size: .87rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+}
+.proj-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.tk {
+  font-size: .73rem;
+  color: var(--muted);
+  background: var(--chip-bg);
+  padding: .22rem .55rem;
+  border-radius: 5px;
+  font-weight: 500;
+  border: 1px solid var(--line);
+}
+
+/* ════════════════════════════════════════════
+   TELECOM
+   ════════════════════════════════════════════ */
+.tel-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+.tel-intro p {
+  font-size: .96rem;
+  color: var(--text);
+  line-height: 1.78;
+  margin-bottom: 1.1rem;
+}
+.tel-intro p:nth-child(n+2) { color: var(--muted); }
+.tel-list { display: flex; flex-direction: column; gap: .85rem; }
+.tel-item {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  transition: border-color .2s ease, transform .15s ease;
+}
+.tel-item:hover { border-color: var(--line-2); transform: translateX(3px); }
+.tel-item h4 {
+  font-weight: 700;
+  font-size: .93rem;
+  color: var(--heading);
+  letter-spacing: -.2px;
+  margin-bottom: .35rem;
+}
+.tel-item p {
+  font-size: .83rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* ════════════════════════════════════════════
+   EXPERIENCE
+   ════════════════════════════════════════════ */
+.tl { position: relative; padding-left: 1.8rem; border-left: 1px solid var(--line); }
+.tl-row { position: relative; padding: 0 0 2.4rem 0; }
+.tl-row:last-child { padding-bottom: 0; }
+.tl-mark {
+  position: absolute;
+  left: -2.25rem;
+  top: .4rem;
+  width: 11px; height: 11px;
+  background: var(--bg-0);
+  border: 2px solid var(--accent-500);
+  border-radius: 50%;
+}
+.tl-mark.now {
+  background: var(--accent-500);
+  box-shadow: 0 0 0 4px rgba(58, 109, 204, .18);
+}
+.tl-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: .25rem;
+}
+.tl-title {
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--heading);
+  letter-spacing: -.3px;
+}
+.tl-period {
+  font-size: .8rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.tl-period.now {
+  color: var(--accent-300);
+  font-weight: 600;
+  background: var(--accent-100);
+  padding: .15rem .55rem;
+  border-radius: 4px;
+}
+.tl-co {
+  font-size: .86rem;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: .7rem;
+}
+.tl-desc {
+  font-size: .87rem;
+  color: var(--muted);
+  line-height: 1.72;
+  max-width: 720px;
+}
+
+/* ════════════════════════════════════════════
+   ABOUT
+   ════════════════════════════════════════════ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.8rem;
+  position: sticky;
+  top: 90px;
+}
+.about-card h3 {
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: var(--heading);
+  letter-spacing: -.3px;
+  margin-bottom: .25rem;
+}
+.about-card .role {
+  font-size: .85rem;
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--line);
+}
+.about-info { display: flex; flex-direction: column; gap: 1.15rem; margin-bottom: 1.4rem; }
+.ai-label {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  margin-bottom: .35rem;
+}
+.ai-val {
+  font-size: .87rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.ai-val small {
+  display: block;
+  color: var(--muted);
+  font-size: .78rem;
+  margin-top: .15rem;
+}
+.about-langs {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+}
+.lang {
+  font-size: .77rem;
+  color: var(--text);
+  background: var(--chip-bg);
+  border: 1px solid var(--line);
+  padding: .28rem .65rem;
+  border-radius: 5px;
+}
+.about-text p {
+  font-size: .96rem;
+  color: var(--text);
+  line-height: 1.78;
+  margin-bottom: 1rem;
+}
+.about-text p:nth-child(n+2) { color: var(--muted); }
+.about-tech { margin-top: 2rem; }
+.about-tech h4 {
+  font-size: .73rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-300);
+  margin-bottom: 1rem;
+}
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chip {
+  background: var(--chip-bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: .32rem .72rem;
+  border-radius: 5px;
+  font-size: .78rem;
+  font-weight: 500;
+  transition: border-color .15s ease, color .15s ease;
+}
+.chip:hover { border-color: var(--accent-500); color: var(--heading); }
+
+/* ════════════════════════════════════════════
+   PUBLICATIONS
+   ════════════════════════════════════════════ */
+.pub-list { display: flex; flex-direction: column; gap: 1rem; }
+.pub {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.4rem 1.6rem;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 1rem;
+  align-items: start;
+  transition: border-color .2s ease, transform .15s ease;
+}
+.pub:hover { border-color: var(--line-2); transform: translateX(3px); }
+.pub-n {
+  font-family: 'Source Serif 4', Georgia, serif;
+  font-size: 1.3rem;
+  color: var(--accent-500);
+  line-height: 1;
+  padding-top: .15rem;
+  opacity: .7;
+}
+.pub h4 {
+  font-weight: 700;
+  font-size: .93rem;
+  color: var(--heading);
+  line-height: 1.4;
+  margin-bottom: .45rem;
+  letter-spacing: -.2px;
+}
+.pub p {
+  font-size: .82rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+.pub a {
+  color: var(--accent-300);
+  font-size: .82rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  margin-top: .55rem;
+}
+.pub a:hover { color: var(--heading); }
+.pub a span { transition: transform .15s ease; }
+.pub a:hover span { transform: translateX(3px); }
+
+/* ════════════════════════════════════════════
+   CERTS
+   ════════════════════════════════════════════ */
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: .75rem;
+}
+.cert {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: .95rem 1.15rem;
+  transition: border-color .2s ease, transform .15s ease;
+}
+.cert:hover { border-color: var(--line-2); transform: translateY(-2px); }
+.cert h4 {
+  font-size: .85rem;
+  font-weight: 600;
+  color: var(--heading);
+  line-height: 1.4;
+}
+.cert p {
+  font-size: .76rem;
+  color: var(--muted);
+  margin-top: .2rem;
+}
+
+/* ════════════════════════════════════════════
+   CONTACT
+   ════════════════════════════════════════════ */
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 4rem;
+  align-items: start;
+}
+.ct-info { display: flex; flex-direction: column; gap: 1.4rem; }
+.ct-row .lbl {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-300);
+  margin-bottom: .35rem;
+}
+.ct-row .val,
+.ct-row .val a {
+  color: var(--heading);
+  font-size: .93rem;
+  font-weight: 500;
+}
+.ct-row .val a:hover { color: var(--accent-500); }
+.cform {
+  background: var(--bg-card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.frow { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
+.ff label {
+  display: block;
+  font-size: .75rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin-bottom: .4rem;
+  letter-spacing: .3px;
+}
+.ff input, .ff textarea, .ff select {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--line);
+  color: var(--heading);
+  border-radius: 8px;
+  padding: .75rem .9rem;
+  font-family: inherit;
+  font-size: .87rem;
+  outline: none;
+  transition: border-color .15s ease, background .15s ease, box-shadow .15s ease;
+}
+.ff input:focus, .ff textarea:focus, .ff select:focus {
+  border-color: var(--accent-500);
+  box-shadow: 0 0 0 3px var(--accent-100);
+}
+.ff input::placeholder, .ff textarea::placeholder { color: var(--muted-2); }
+.ff select option { background: var(--bg-0); color: var(--heading); }
+.ff textarea { resize: vertical; min-height: 110px; }
+.fsub {
+  align-self: flex-start;
+  background: var(--accent-600);
+  color: #fff;
+  border: none;
+  padding: .82rem 1.7rem;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: .88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, transform .15s ease, box-shadow .2s ease;
+  box-shadow: 0 4px 14px rgba(58, 109, 204, .25);
+}
+.fsub:hover { background: var(--accent-700); transform: translateY(-2px); }
+
+/* ════════════════════════════════════════════
+   SUCCESS MODAL
+   ════════════════════════════════════════════ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 26, 45, .55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+:root[data-theme="light"] .modal-backdrop {
+  background: rgba(15, 32, 54, .35);
+}
+.modal-backdrop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.modal {
+  background: var(--bg-0);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  padding: 2.2rem;
+  max-width: 460px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .35);
+  transform: scale(.94) translateY(12px);
+  opacity: 0;
+  transition: transform .35s cubic-bezier(.34, 1.56, .64, 1), opacity .25s ease;
+}
+.modal-backdrop.show .modal {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+.modal-close {
+  position: absolute;
+  top: .9rem;
+  right: .9rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  background: var(--bg-card);
+  color: var(--muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color .15s ease, color .15s ease, background .15s ease;
+}
+.modal-close:hover {
+  border-color: var(--line-2);
+  color: var(--heading);
+}
+.modal-close svg { width: 15px; height: 15px; }
+.modal-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #10b981, #059669);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.4rem;
+  box-shadow: 0 0 0 6px rgba(16, 185, 129, .12);
+  position: relative;
+}
+.modal-icon svg {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+.modal-icon svg path {
+  stroke-dasharray: 30;
+  stroke-dashoffset: 30;
+  animation: drawCheck .55s ease forwards .15s;
+}
+@keyframes drawCheck {
+  to { stroke-dashoffset: 0; }
+}
+.modal h3 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--heading);
+  text-align: center;
+  letter-spacing: -.4px;
+  margin-bottom: .55rem;
+}
+.modal p {
+  text-align: center;
+  font-size: .92rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.6rem;
+}
+.modal-actions {
+  display: flex;
+  gap: .65rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.modal-actions a {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.2rem;
+  border-radius: 8px;
+  font-size: .85rem;
+  font-weight: 600;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+.modal-actions .mb-primary {
+  background: var(--accent-600);
+  color: #fff;
+  border: 1px solid var(--accent-600);
+}
+.modal-actions .mb-primary:hover { background: var(--accent-700); border-color: var(--accent-700); transform: translateY(-2px); }
+.modal-actions .mb-ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--line-2);
+}
+.modal-actions .mb-ghost:hover { border-color: var(--accent-500); color: var(--heading); transform: translateY(-2px); }
+.modal-actions svg { width: 16px; height: 16px; }
+.modal-foot {
+  margin-top: 1.4rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--line);
+  text-align: center;
+  font-size: .76rem;
+  color: var(--muted-2);
+}
+
+/* ════════════════════════════════════════════
+   BACK TO TOP
+   ════════════════════════════════════════════ */
+.back-top {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--accent-600);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: opacity .25s ease, transform .25s ease, background-color .2s ease;
+  box-shadow: 0 8px 24px rgba(58, 109, 204, .35);
+  z-index: 99;
+}
+.back-top.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+.back-top:hover { background: var(--accent-700); }
+.back-top svg { width: 18px; height: 18px; }
+
+/* ════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════ */
+footer {
+  background: var(--bg-0);
+  border-top: 1px solid var(--line);
+  padding: 2rem 5vw;
+  color: var(--muted);
+  font-size: .8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.foot-links { display: flex; gap: 1.4rem; }
+.foot-links a { color: var(--muted); transition: color .15s ease; }
+.foot-links a:hover { color: var(--heading); }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .menu-btn { display: flex; }
+  .tel-grid, .about-grid, .ct-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-meta { grid-template-columns: repeat(2, 1fr); gap: 1.6rem; }
+  .frow { grid-template-columns: 1fr; }
+  .brand .role, .brand .sep { display: none; }
+  .about-card { position: static; }
+}
+@media (max-width: 540px) {
+  section { padding: 70px 5vw; }
+  .hero { padding: 130px 5vw 80px; }
+  .hero-meta { grid-template-columns: 1fr 1fr; }
+  .nav-cta { display: none; }
+}
+
+/* ════════════════════════════════════════════
+   FADE-IN
+   ════════════════════════════════════════════ */
+.fi { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }
+.fi.vis { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .fi { opacity: 1; transform: none; transition: none; }
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="brand">
+    <span class="brand-mark">YK</span>
+    <span>Yidnekachew Kibru</span>
+    <span class="sep">·</span>
+    <span class="role">Software Engineer</span>
+  </a>
+  <ul class="nav-links" id="navlinks">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#telecom">Telecom</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" type="button">
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    </button>
+    <a href="#contact" class="nav-cta">Get in touch</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-status"><span class="dot"></span> Available for new projects</div>
+    <h1>Software engineer building <em>practical, dependable</em> systems for businesses, governments, and operators.</h1>
+    <p class="hero-lead">
+      I'm Yidnekachew — a full-stack .NET developer and BSS operations manager based in Addis Ababa. I build custom software, web platforms, and automation that fits the way your business actually works.
+    </p>
+    <div class="hero-ctas">
+      <a href="#services" class="btn btn-primary">See what I do <span class="arrow">→</span></a>
+      <a href="#projects" class="btn btn-ghost">View projects</a>
+    </div>
+    <div class="hero-meta">
+      <div><div class="hm-num">10+</div><div class="hm-label">Years across software, telecom &amp; teaching</div></div>
+      <div><div class="hm-num">.NET / Angular</div><div class="hm-label">Primary stack</div></div>
+      <div><div class="hm-num">3</div><div class="hm-label">Peer-reviewed publications</div></div>
+      <div><div class="hm-num">MSc</div><div class="hm-label">Software Engineering, AASTU</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="bg-1">
+  <div class="s-inner">
+    <div class="s-head fi">
+      <div class="eyebrow">Services</div>
+      <h2 class="s-title">What I can help with</h2>
+      <p class="s-sub">A short list of things I do well — and have done in production. Reach out if your project fits, or if you'd like to scope something together.</p>
+    </div>
+    <div class="svc-grid">
+
+      <div class="svc fi">
+        <div class="svc-num">01</div>
+        <h3>Website &amp; web app development</h3>
+        <p class="svc-desc">Full-stack web applications, from corporate sites to internal tools and customer-facing platforms.</p>
+        <ul class="svc-ul">
+          <li>Full-stack web applications</li>
+          <li>RESTful API design and integration</li>
+          <li>Responsive front-end interfaces</li>
+          <li>Legacy system modernization</li>
+          <li>Admin dashboards and portals</li>
+        </ul>
+        <div class="svc-langs">
+          <span class="lb">C# / .NET</span>
+          <span class="lb">Angular</span>
+          <span class="lb">TypeScript</span>
+          <span class="lb">JavaScript</span>
+          <span class="lb">Python</span>
+          <span class="lb">Node.js</span>
+          <span class="lb">React</span>
+          <span class="lb">Java</span>
+          <span class="lb">SQL</span>
+          <span class="lb">HTML/CSS</span>
+        </div>
+      </div>
+
+      <div class="svc fi">
+        <div class="svc-num">02</div>
+        <h3>Custom software development</h3>
+        <p class="svc-desc">Tailored business software built around your processes — not a generic off-the-shelf product forced to fit.</p>
+        <ul class="svc-ul">
+          <li>Asset and inventory management systems</li>
+          <li>Financial, mortgage and lending platforms</li>
+          <li>Government and public-sector systems</li>
+          <li>ERP and enterprise back-office tools</li>
+          <li>Healthcare and education management</li>
+          <li>Internal tools and workflow apps</li>
+        </ul>
+        <div class="svc-langs">
+          <span class="lb">.NET Core</span>
+          <span class="lb">ASP.NET</span>
+          <span class="lb">Angular</span>
+          <span class="lb">SQL Server</span>
+          <span class="lb">EF Core</span>
+          <span class="lb">Python</span>
+        </div>
+      </div>
+
+      <div class="svc fi">
+        <div class="svc-num">03</div>
+        <h3>AI &amp; intelligent automation</h3>
+        <p class="svc-desc">Applying AI and machine learning where it makes a real operational difference — from focused models to LLM-powered assistants and agents.</p>
+        <ul class="svc-ul">
+          <li>LLM-based assistants &amp; chatbots</li>
+          <li>RAG systems over your own documents</li>
+          <li>AI agents and multi-step workflows</li>
+          <li>Computer vision &amp; image classification</li>
+          <li>NLP and text-processing pipelines</li>
+          <li>AI strategy and roadmap consulting</li>
+        </ul>
+        <div class="svc-langs">
+          <span class="lb">OpenAI</span>
+          <span class="lb">Anthropic Claude</span>
+          <span class="lb">Gemini</span>
+          <span class="lb">LangChain</span>
+          <span class="lb">LlamaIndex</span>
+          <span class="lb">Pinecone</span>
+          <span class="lb">TensorFlow</span>
+          <span class="lb">Python</span>
+        </div>
+      </div>
+
+      <div class="svc fi">
+        <div class="svc-num">04</div>
+        <h3>Business process automation</h3>
+        <p class="svc-desc">Cutting out manual, repetitive work across teams and systems — using a mix of low-code tools, AI, and custom scripts depending on what fits.</p>
+        <ul class="svc-ul">
+          <li>Workflow &amp; cross-system integrations</li>
+          <li>AI-assisted document &amp; email processing</li>
+          <li>Reporting and KPI dashboards</li>
+          <li>Internal automation bots</li>
+          <li>CI/CD and DevOps pipelines</li>
+        </ul>
+        <div class="svc-langs">
+          <span class="lb">n8n</span>
+          <span class="lb">Make</span>
+          <span class="lb">Zapier</span>
+          <span class="lb">Power Automate</span>
+          <span class="lb">Python</span>
+          <span class="lb">Azure DevOps</span>
+          <span class="lb">Jenkins</span>
+        </div>
+      </div>
+
+      <div class="svc fi">
+        <div class="svc-num">05</div>
+        <h3>Telecom systems consulting</h3>
+        <p class="svc-desc">BSS-focused expertise from years inside one of the region's busiest telecom environments — built around the systems operators actually run on.</p>
+        <ul class="svc-ul">
+          <li>BSS architecture &amp; integration design</li>
+          <li>CRM and customer system integration</li>
+          <li>Sales lead management systems</li>
+          <li>Unified Product Catalogue (UPC)</li>
+          <li>Number management</li>
+          <li>Bulk SMS platforms</li>
+          <li>Service Delivery Platform (SDP)</li>
+        </ul>
+        <div class="svc-langs">
+          <span class="lb">BSS</span>
+          <span class="lb">CRM</span>
+          <span class="lb">UPC</span>
+          <span class="lb">SDP</span>
+          <span class="lb">ESB</span>
+          <span class="lb">API Gateway</span>
+        </div>
+      </div>
+
+      <div class="svc fi">
+        <div class="svc-num">06</div>
+        <h3>Enterprise systems operations &amp; monitoring</h3>
+        <p class="svc-desc">Setting up monitoring, alerting, and operational tooling so your systems are observable, predictable, and quick to recover when something goes wrong.</p>
+        <ul class="svc-ul">
+          <li>Monitoring &amp; observability setup</li>
+          <li>SLA/KPI dashboards &amp; reporting</li>
+          <li>Log aggregation &amp; analysis pipelines</li>
+          <li>Incident management &amp; on-call workflows</li>
+          <li>Anomaly detection &amp; alerting</li>
+          <li>Root cause analysis &amp; problem management</li>
+        </ul>
+        <div class="svc-langs">
+          <span class="lb">Splunk</span>
+          <span class="lb">Grafana</span>
+          <span class="lb">Prometheus</span>
+          <span class="lb">ELK Stack</span>
+          <span class="lb">Datadog</span>
+          <span class="lb">Zabbix</span>
+          <span class="lb">BMC Helix</span>
+          <span class="lb">JIRA / ITSM</span>
+          <span class="lb">PagerDuty</span>
+        </div>
+      </div>
+
+      <div class="svc fi">
+        <div class="svc-num">07</div>
+        <h3>Digital marketing</h3>
+        <p class="svc-desc">Helping technical and service businesses show up clearly online, and turn that visibility into real conversations.</p>
+        <ul class="svc-ul">
+          <li>SEO and content strategy</li>
+          <li>Social media presence and growth</li>
+          <li>Email and newsletter campaigns</li>
+          <li>LinkedIn personal &amp; brand building</li>
+          <li>Analytics and conversion tracking</li>
+        </ul>
+        <div class="svc-langs">
+          <span class="lb">SEO</span>
+          <span class="lb">Google Analytics</span>
+          <span class="lb">LinkedIn</span>
+          <span class="lb">Email marketing</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="bg-0">
+  <div class="s-inner">
+    <div class="s-head fi">
+      <div class="eyebrow">Selected work</div>
+      <h2 class="s-title">A few systems I've built</h2>
+      <p class="s-sub">A snapshot of software I've contributed to as developer, lead or consultant across different industries.</p>
+    </div>
+    <div class="proj-grid">
+
+      <div class="proj fi">
+        <div class="proj-sector">Enterprise</div>
+        <h3>Asset management system</h3>
+        <p class="proj-desc">Internal platform for tracking organizational assets across departments — covering registration, assignment, transfers, maintenance and disposal, with reporting for finance and audit teams.</p>
+        <div class="proj-tech">
+          <span class="tk">ASP.NET Core</span><span class="tk">Angular</span>
+          <span class="tk">SQL Server</span><span class="tk">EF Core</span>
+        </div>
+      </div>
+
+      <div class="proj fi">
+        <div class="proj-sector">Finance</div>
+        <h3>Mortgage &amp; financial management system</h3>
+        <p class="proj-desc">Lending platform supporting loan origination, customer assessment, repayment scheduling and reporting — built for an institution that needed proper workflow control rather than spreadsheets.</p>
+        <div class="proj-tech">
+          <span class="tk">.NET Core</span><span class="tk">Angular</span>
+          <span class="tk">SQL Server</span><span class="tk">Web API</span>
+        </div>
+      </div>
+
+      <div class="proj fi">
+        <div class="proj-sector">Government</div>
+        <h3>Transport department automation</h3>
+        <p class="proj-desc">Digitization of a government transport department's core workflows — moving paper-driven registration, licensing and inspection processes into a single application with proper records and reporting.</p>
+        <div class="proj-tech">
+          <span class="tk">ASP.NET Core</span><span class="tk">Angular</span>
+          <span class="tk">SQL Server</span><span class="tk">REST API</span>
+        </div>
+      </div>
+
+      <div class="proj fi">
+        <div class="proj-sector">Manufacturing &amp; retail</div>
+        <h3>Custom ERP for a diversified group</h3>
+        <p class="proj-desc">Internal ERP modules covering inventory, procurement, sales, HR and basic finance for a group company with operations across manufacturing and retail — replacing a patchwork of disconnected tools.</p>
+        <div class="proj-tech">
+          <span class="tk">ASP.NET Core</span><span class="tk">MVC</span>
+          <span class="tk">SQL Server</span><span class="tk">Web API</span>
+        </div>
+      </div>
+
+      <div class="proj fi">
+        <div class="proj-sector">Healthcare</div>
+        <h3>Hospital management system</h3>
+        <p class="proj-desc">Hospital information system covering patient registration, appointments, basic clinical records, pharmacy and billing — built to support day-to-day operations of a healthcare facility.</p>
+        <div class="proj-tech">
+          <span class="tk">ASP.NET Core</span><span class="tk">Angular</span>
+          <span class="tk">SQL Server</span>
+        </div>
+      </div>
+
+      <div class="proj fi">
+        <div class="proj-sector">Telecom</div>
+        <h3>BSS operations &amp; monitoring</h3>
+        <p class="proj-desc">Operational framework and dashboards for BSS platforms at Safaricom Ethiopia — improving visibility of KPIs, incident tracking, and root-cause analysis as part of the day-to-day operations function.</p>
+        <div class="proj-tech">
+          <span class="tk">Splunk</span><span class="tk">JIRA / ITSM</span>
+          <span class="tk">BMC Helix</span>
+        </div>
+      </div>
+
+      <div class="proj fi">
+        <div class="proj-sector">AI research</div>
+        <h3>Crop disease detection (research)</h3>
+        <p class="proj-desc">Deep learning approach to detecting Bacterial Wilt on Enset crops, published in the International Journal of Engineering Research in Africa (2020) — work I contributed to as part of AI research collaboration.</p>
+        <div class="proj-tech">
+          <span class="tk">Python</span><span class="tk">Deep Learning</span>
+          <span class="tk">Computer Vision</span>
+        </div>
+      </div>
+
+      <div class="proj fi">
+        <div class="proj-sector">Education</div>
+        <h3>School &amp; university management</h3>
+        <p class="proj-desc">Academic management software covering student records, course scheduling, grading, and basic HR / payroll — designed to fit the realities of how local institutions actually run.</p>
+        <div class="proj-tech">
+          <span class="tk">.NET Core</span><span class="tk">Angular</span>
+          <span class="tk">SQL Server</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TELECOM -->
+<section id="telecom" class="bg-1">
+  <div class="s-inner">
+    <div class="s-head fi">
+      <div class="eyebrow">Domain expertise</div>
+      <h2 class="s-title">Telecom systems engineering</h2>
+      <p class="s-sub">A specialism built from working inside a large telecom operator's BSS environment — both as a systems engineer and as the person responsible for operating it day to day.</p>
+    </div>
+    <div class="tel-grid">
+      <div class="tel-intro fi">
+        <p>At Safaricom Ethiopia, I've worked across the Business Support Systems stack — first as a Senior System Engineer focused on design and integration, and now as Operations Manager responsible for the platforms in production.</p>
+        <p>That dual perspective — building and running — shapes how I approach telecom and integration projects: solutions need to be sound on paper, but they also need to behave well at 2am when something breaks.</p>
+        <p>Areas where I can add real value if you're working in or with a telecom environment:</p>
+      </div>
+      <div class="tel-list fi">
+        <div class="tel-item">
+          <h4>Business Support Systems (BSS)</h4>
+          <p>Design, integration and operations of BSS platforms — covering architecture review, system roadmaps and end-to-end implementation.</p>
+        </div>
+        <div class="tel-item">
+          <h4>CRM &amp; customer systems</h4>
+          <p>Telecom CRM implementations — customer onboarding, case handling, 360° customer view, and integration with downstream BSS systems.</p>
+        </div>
+        <div class="tel-item">
+          <h4>Sales lead management</h4>
+          <p>Lead-to-order systems for consumer and enterprise segments — bridging sales operations with provisioning and billing flows.</p>
+        </div>
+        <div class="tel-item">
+          <h4>Unified Product Catalogue (UPC)</h4>
+          <p>Managing telecom product catalogues — tariffs, bundles, offers, and propagation across BSS layers from creation to billing.</p>
+        </div>
+        <div class="tel-item">
+          <h4>Number management</h4>
+          <p>MSISDN lifecycle and number inventory management — allocation, reservation, recycling and integration with provisioning systems.</p>
+        </div>
+        <div class="tel-item">
+          <h4>Bulk SMS &amp; messaging platforms</h4>
+          <p>Bulk SMS solutions and enterprise messaging — A2P, campaigns, and integration with CRM and customer engagement systems.</p>
+        </div>
+        <div class="tel-item">
+          <h4>Service Delivery Platform (SDP)</h4>
+          <p>SDP design and integration for value-added services — orchestrating service creation, exposure, and delivery across network interfaces.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience" class="bg-0">
+  <div class="s-inner">
+    <div class="s-head fi">
+      <div class="eyebrow">Experience</div>
+      <h2 class="s-title">Work history</h2>
+      <p class="s-sub">A decade across software development, telecom operations, AI research and teaching.</p>
+    </div>
+    <div class="tl fi">
+
+      <div class="tl-row">
+        <div class="tl-mark now"></div>
+        <div class="tl-head">
+          <div class="tl-title">BSS Operations Manager</div>
+          <div class="tl-period now">March 2022 — Present</div>
+        </div>
+        <div class="tl-co">Safaricom Ethiopia · Addis Ababa</div>
+        <p class="tl-desc">L2/L3 escalation lead for BSS platforms supporting telecom operations. Manage daily support operations, lead supervisors and frontline agents to meet SLA and KPI targets. Monitor KPIs with Splunk dashboards, drive incident management and RCA, and run release, patch and vulnerability management across cloud-based BSS environments. Previously held the Senior System Engineer – BSS role in the same organization.</p>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-mark"></div>
+        <div class="tl-head">
+          <div class="tl-title">Full Stack Software Developer</div>
+          <div class="tl-period">June 2024 — February 2026</div>
+        </div>
+        <div class="tl-co">D.G. Techlink Ltd · Nicosia, Cyprus (Remote)</div>
+        <p class="tl-desc">Developed full-stack applications using .NET Core and Angular. Designed RESTful APIs with ASP.NET Core Web API, modernized legacy applications with Razor Pages, and built Angular front-end components using TypeScript and RxJS. Managed SQL Server data access through EF Core and contributed unit and integration tests with xUnit/NUnit.</p>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-mark"></div>
+        <div class="tl-head">
+          <div class="tl-title">AI Research Technical Consultant</div>
+          <div class="tl-period">April 2021 — September 2022</div>
+        </div>
+        <div class="tl-co">FDRE Artificial Intelligence Institute · Addis Ababa</div>
+        <p class="tl-desc">Designed and implemented AI solutions for clients — working on machine learning, deep learning, NLP and computer vision projects. Provided guidance on data analysis, model training and AI strategy, and supported research that contributed to peer-reviewed publications.</p>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-mark"></div>
+        <div class="tl-head">
+          <div class="tl-title">Management Information Systems Manager</div>
+          <div class="tl-period">March 2020 — March 2022</div>
+        </div>
+        <div class="tl-co">Minaye Group · Addis Ababa</div>
+        <p class="tl-desc">Led the management information systems function — overseeing development and maintenance of internal applications using ASP.NET Core, Web APIs and SQL Server. Translated business requirements into technical solutions, coordinated development efforts, supported junior developers, and ran peer code reviews.</p>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-mark"></div>
+        <div class="tl-head">
+          <div class="tl-title">Full Stack Developer</div>
+          <div class="tl-period">January 2018 — March 2020</div>
+        </div>
+        <div class="tl-co">DSP Consultancy · Addis Ababa</div>
+        <p class="tl-desc">Worked with business analysts, development teams and infrastructure specialists on high-availability solutions for mission-critical applications using .NET, ASP.NET Core and SQL. Contributed to architectural discussions and supported production deployments.</p>
+      </div>
+
+      <div class="tl-row">
+        <div class="tl-mark"></div>
+        <div class="tl-head">
+          <div class="tl-title">Lecturer</div>
+          <div class="tl-period">September 2015 — January 2018</div>
+        </div>
+        <div class="tl-co">Wolkite University · Wolkite</div>
+        <p class="tl-desc">Taught core technology courses including Programming (C#, C++, Python), Database Management (MSSQL) and Introduction to AI &amp; Machine Learning. Designed syllabi, managed multiple concurrent courses and worked to keep curriculum content current.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="bg-1">
+  <div class="s-inner">
+    <div class="s-head fi">
+      <div class="eyebrow">About</div>
+      <h2 class="s-title">A bit about me</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-card fi">
+        <h3>Yidnekachew Kibru Afework</h3>
+        <div class="role">Software Engineer · BSS Operations Manager</div>
+        <div class="about-info">
+          <div>
+            <div class="ai-label">Based in</div>
+            <div class="ai-val">Addis Ababa, Ethiopia<small>Available for remote engagements worldwide</small></div>
+          </div>
+          <div>
+            <div class="ai-label">Education</div>
+            <div class="ai-val">MSc, Software Engineering — AASTU, 2019<small>BSc, Information Systems — Bahir Dar University, 2015</small></div>
+          </div>
+          <div>
+            <div class="ai-label">Research</div>
+            <div class="ai-val">3 peer-reviewed publications<small>AI, deep learning &amp; software engineering</small></div>
+          </div>
+        </div>
+        <div class="about-langs">
+          <span class="lang">Amharic — Native</span>
+          <span class="lang">English — Fluent</span>
+        </div>
+      </div>
+      <div class="about-text fi">
+        <p>I started out as a university lecturer, moved into software development, picked up AI research along the way, and now spend my days both engineering and running telecom BSS platforms. That mix is unusual but it's been useful — it means I can move between writing code, reviewing architectures, and worrying about whether a system will still be standing tomorrow morning.</p>
+        <p>Most of my engineering career has been built around the .NET stack — C#, ASP.NET Core, Angular, SQL Server — applied to real-world problems across finance, telecom, education, health and government. I'm comfortable working solo on smaller projects and inside larger teams on more complex ones.</p>
+        <p>Outside of full-time work, I take on selected freelance and consulting projects where I can genuinely add value. If that sounds like a fit for what you're working on, I'd be happy to have a conversation.</p>
+        <div class="about-tech">
+          <h4>Tools I work with regularly</h4>
+          <div class="chips">
+            <span class="chip">C# / .NET Core</span>
+            <span class="chip">ASP.NET Core</span>
+            <span class="chip">Angular</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">SQL Server</span>
+            <span class="chip">EF Core</span>
+            <span class="chip">Web API</span>
+            <span class="chip">Python</span>
+            <span class="chip">Azure DevOps</span>
+            <span class="chip">Git</span>
+            <span class="chip">Docker</span>
+            <span class="chip">AWS</span>
+            <span class="chip">Splunk</span>
+            <span class="chip">Grafana</span>
+            <span class="chip">xUnit / NUnit</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications" class="bg-0">
+  <div class="s-inner">
+    <div class="s-head fi">
+      <div class="eyebrow">Research</div>
+      <h2 class="s-title">Selected publications</h2>
+    </div>
+    <div class="pub-list fi">
+      <div class="pub">
+        <div class="pub-n">01</div>
+        <div>
+          <h4>Detection of Bacterial Wilt on Enset Crop Using Deep Learning Approach</h4>
+          <p>Afework, Y.K. &amp; Debelee, T.G. · International Journal of Engineering Research in Africa, Vol. 51, pp. 131–146, 2020</p>
+          <a href="https://doi.org/10.4028/www.scientific.net/jera.51.131" target="_blank" rel="noopener">Read paper <span>→</span></a>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="pub-n">02</div>
+        <div>
+          <h4>The Principle of Architecture First in Software Project Management Minimizes the Cost of Software Development: A Review</h4>
+          <p>Afework, Y.K., Mengist, T.B., Ayele, N.A. &amp; Tamiru, H.K. · International Journal of Innovative Technology and Exploring Engineering (IJITEE), Vol. 10(1), pp. 177–179, 2020</p>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="pub-n">03</div>
+        <div>
+          <h4>Designing a Time Series Crime Prediction Model using Long Short-Term Memory Recurrent Neural Network</h4>
+          <p>Meskela, T.E., Afework, Y.K. et al. · International Journal of Recent Technology and Engineering (IJRTE), Vol. 9(4), pp. 402–405, 2020</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTS -->
+<section id="certs" class="bg-1">
+  <div class="s-inner">
+    <div class="s-head fi">
+      <div class="eyebrow">Certifications</div>
+      <h2 class="s-title">Professional certifications</h2>
+    </div>
+    <div class="certs-grid fi">
+      <div class="cert"><h4>Scrum Master</h4><p>LearnQuest</p></div>
+      <div class="cert"><h4>Agile Project Management</h4><p>Google</p></div>
+      <div class="cert"><h4>Fundamentals of Project Management</h4><p>Google</p></div>
+      <div class="cert"><h4>Google International Certified Professional</h4><p>Google</p></div>
+      <div class="cert"><h4>Spatial Data Science (GIS) &amp; Its Application</h4><p>Yonsei University</p></div>
+      <div class="cert"><h4>CCNA — Routing &amp; Switching</h4><p>Cisco · Bahir Dar University</p></div>
+      <div class="cert"><h4>Kaspersky Endpoint Security &amp; Management</h4><p>Kaspersky</p></div>
+      <div class="cert"><h4>Cloud, DevOps, AI &amp; Linux</h4><p>Udemy / LinkedIn Learning</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="bg-0">
+  <div class="s-inner">
+    <div class="s-head fi">
+      <div class="eyebrow">Contact</div>
+      <h2 class="s-title">Have a project in mind?</h2>
+      <p class="s-sub">Send a short note about what you're working on. I'll get back to you within a couple of working days.</p>
+    </div>
+    <div class="ct-grid">
+      <div class="ct-info fi">
+        <div class="ct-row">
+          <div class="lbl">Email</div>
+          <div class="val"><a href="mailto:yidnekibru@gmail.com">yidnekibru@gmail.com</a></div>
+        </div>
+        <div class="ct-row">
+          <div class="lbl">Phone &amp; WhatsApp</div>
+          <div class="val"><a href="tel:+251912708459">+251 912 708 459</a></div>
+        </div>
+        <div class="ct-row">
+          <div class="lbl">Alternate phone</div>
+          <div class="val"><a href="tel:+251711100023">+251 711 100 023</a></div>
+        </div>
+        <div class="ct-row">
+          <div class="lbl">Based in</div>
+          <div class="val">Addis Ababa, Ethiopia<br/><span style="color:var(--muted);font-weight:400;font-size:.85rem">Available globally for remote work</span></div>
+        </div>
+      </div>
+      <form class="cform fi" id="contactForm">
+        <div class="frow">
+          <div class="ff"><label>Your name</label><input type="text" placeholder="Full name" /></div>
+          <div class="ff"><label>Email</label><input type="email" placeholder="you@company.com" /></div>
+        </div>
+        <div class="frow">
+          <div class="ff"><label>Company (optional)</label><input type="text" placeholder="Organisation" /></div>
+          <div class="ff"><label>Phone (optional)</label><input type="tel" placeholder="+251 …" /></div>
+        </div>
+        <div class="ff">
+          <label>What do you need?</label>
+          <select>
+            <option value="">Select an area…</option>
+            <option>Website / web application</option>
+            <option>Custom software</option>
+            <option>AI &amp; intelligent automation</option>
+            <option>Business process automation</option>
+            <option>Telecom systems consulting</option>
+            <option>Enterprise operations &amp; monitoring</option>
+            <option>Digital marketing</option>
+            <option>Not sure yet — happy to discuss</option>
+          </select>
+        </div>
+        <div class="ff">
+          <label>A bit about the project</label>
+          <textarea placeholder="What you're trying to build, who it's for, and any constraints (timeline, budget, technology)…"></textarea>
+        </div>
+        <button type="submit" class="fsub">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <div class="modal-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12l5 5L20 7"/>
+      </svg>
+    </div>
+    <h3 id="modalTitle">Thanks for reaching out</h3>
+    <p>Your message has been noted. For the fastest response, please contact me directly through one of the channels below — I usually reply within a working day.</p>
+    <div class="modal-actions">
+      <a href="mailto:yidnekibru@gmail.com" class="mb-primary">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email me
+      </a>
+      <a href="https://wa.me/251912708459" target="_blank" rel="noopener" class="mb-ghost">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+    <div class="modal-foot">yidnekibru@gmail.com  ·  +251 912 708 459</div>
+  </div>
+</div>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- FOOTER -->
+<footer>
+  <p>© Yidnekachew Kibru Afework · Addis Ababa, Ethiopia</p>
+  <div class="foot-links">
+    <a href="#services">Services</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="mailto:yidnekibru@gmail.com">Email</a>
+  </div>
+</footer>
+
+<script>
+  // ──── Theme toggle ────
+  const html = document.documentElement;
+  const toggle = document.getElementById('themeToggle');
+
+  function setTheme(t) {
+    html.setAttribute('data-theme', t);
+    try { localStorage.setItem('theme', t); } catch(e) {}
+    document.querySelector('meta[name="theme-color"]').setAttribute(
+      'content', t === 'dark' ? '#0b1a2d' : '#ffffff'
+    );
+  }
+  // Initial theme: saved → system → dark
+  (function() {
+    let saved = null;
+    try { saved = localStorage.getItem('theme'); } catch(e) {}
+    if (saved) {
+      setTheme(saved);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      setTheme('light');
+    } else {
+      setTheme('dark');
+    }
+  })();
+  toggle.addEventListener('click', () => {
+    setTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+  });
+
+  // ──── Scroll-aware nav + back-to-top ────
+  const nav = document.getElementById('nav');
+  const backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY;
+    nav.classList.toggle('scrolled', y > 20);
+    backTop.classList.toggle('show', y > 600);
+  }, { passive: true });
+  backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+  // ──── Active nav link on scroll ────
+  const navLinks = document.querySelectorAll('#navlinks a');
+  const sections = Array.from(navLinks).map(a => document.querySelector(a.getAttribute('href')));
+  const navObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const id = e.target.id;
+        navLinks.forEach(a => {
+          a.classList.toggle('active', a.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => s && navObs.observe(s));
+
+  // ──── Contact form modal ────
+  const form = document.getElementById('contactForm');
+  const modal = document.getElementById('successModal');
+  const modalClose = document.getElementById('modalClose');
+
+  function openModal() {
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => modalClose.focus(), 100);
+  }
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    openModal();
+    form.reset();
+  });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('show')) closeModal();
+  });
+
+  // ──── Fade-in ────
+  const fadeObs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.fi').forEach(el => fadeObs.observe(el));
+</script>
+</body>
+</html>
